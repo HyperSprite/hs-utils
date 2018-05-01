@@ -2,6 +2,8 @@
 
 Some utilities for managing npm packages.
 
+For best results use npm 5.2 or later.
+
 ## Usage
 
 ### Install
@@ -52,25 +54,29 @@ The hsUtils of `this-project` package.json might look like this:
 
 Runs `npm install` on each projectDirs project
 
-`hs-util  --opt install`
+`npx hs-util  --opt install`
 
 Remove node_modules folders from each projectDirs project.
 
-`hs-util --opt clean`
+`npx hs-util --opt clean`
 
 Compares Prod and Dev dependencies based on the package.json file for each projectDir project to the compareTo project. The output will show you what is missing or different version than the `compareTo`.
 
-`hs-util --opt compare`
+`npx hs-util --opt compare`
 
 Runs npm outdated on each projectDirs project. Same as running npm outdated in the projects directory.
 
-`hs-util --opt outdated`
+`npx hs-util --opt outdated`
 
 
 Validate package.json file for basic things.
 
-`hs-util --package validate`
+`npx hs-util --package validate`
 
 find/replace text in the package.json file
 
-`hs-util --pacakge rename --old component-starter --new cool-component`
+`npx hs-util --pacakge rename --old component-starter --new cool-component`
+
+All commands can take a `--debug` flag for extra output, prefixed with **hsUtils**.
+
+If npm 5.2 is not available, commands could be placed in the **scripts** section of the package.json file but this is less convenient.
