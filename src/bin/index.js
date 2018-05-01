@@ -1,3 +1,3 @@
 #! /usr/bin/env node
-
-require('../');
+// eslint-disable-next-line
+require('../../@hypersprite/');
