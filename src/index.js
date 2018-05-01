@@ -46,14 +46,9 @@ const jsonFileToObj = (fileName, theCWD) => {
   if (
     !jsonFileObj ||
     !jsonFileObj.version ||
-    !jsonFileObj.name ||
-    !jsonFileObj.author ||
-    !jsonFileObj.license ||
-    !jsonFileObj.description ||
-    !jsonFileObj.homepage ||
-    !jsonFileObj.repository ||
-    !jsonFileObj.repository.url
+    !jsonFileObj.name
   ) {
+    hsUtilsDebug(chalk.bold('!jsonFileObj', jsonFileObj));
     // eslint-disable-next-line
     console.log(chalk.red(`${theCWD || ''}/${fileName} is invalid or missing config, check readme for more information`));
     return process.exit(1);
@@ -105,7 +100,7 @@ const spawnOutDateCheck = thisCWD => new Promise((resolve, reject) => {
   const child = spawn('npm', ['outdated'], {
     stdio: 'inherit',
     shell: true,
-    thisCWD,
+    cwd: thisCWD,
   });
   child.on('exit', onExit);
 });
@@ -245,12 +240,13 @@ function installDepsMulti(...args) {
           reject(cwd);
         }
       }
+
       if (thisCWD !== rootDir) {
         console.log(`Starting install in \n ${thisCWD}`);
         const child = spawn('npm', ['install'], {
           stdio: 'inherit',
           shell: true,
-          thisCWD // eslint-disable-line
+          cwd: thisCWD // eslint-disable-line
         });
         child.on('exit', onExit);
       } else {

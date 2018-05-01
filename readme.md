@@ -54,28 +54,28 @@ The hsUtils of `this-project` package.json might look like this:
 
 Runs `npm install` on each projectDirs project
 
-`npx hs-util  --opt install`
+`npx hs-utils  --opt install`
 
 Remove node_modules folders from each projectDirs project.
 
-`npx hs-util --opt clean`
+`npx hs-utils --opt clean`
 
 Compares Prod and Dev dependencies based on the package.json file for each projectDir project to the compareTo project. The output will show you what is missing or different version than the `compareTo`.
 
-`npx hs-util --opt compare`
+`npx hs-utils --opt compare`
 
 Runs npm outdated on each projectDirs project. Same as running npm outdated in the projects directory.
 
-`npx hs-util --opt outdated`
+`npx hs-utils --opt outdated`
 
 
 Validate package.json file for basic things.
 
-`npx hs-util --package validate`
+`npx hs-utils --package validate`
 
 find/replace text in the package.json file
 
-`npx hs-util --pacakge rename --old component-starter --new cool-component`
+`npx hs-utils --pacakge rename --old component-starter --new cool-component`
 
 All commands can take a `--debug` flag for extra output, prefixed with **hsUtils**.
 
