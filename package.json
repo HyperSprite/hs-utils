@@ -19,7 +19,7 @@
   "description": "Variouse utils for dealing with npm packaging",
   "main": "dst/index.js",
   "bin": {
-    "hs-utils": "dst/bin/index.js"
+    "hs-utils": "dst/index.js"
   },
   "scripts": {
     "test": "echo \"Should probably write some tests!\"",

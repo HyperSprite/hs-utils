@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 const debug = require('debug');
 const { argv } = require('yargs');
 const chalk = require('chalk');
