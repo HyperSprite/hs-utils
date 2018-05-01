@@ -8,7 +8,7 @@ Some utilities for managing npm packages.
 
 This should be a dev dependency
 
-```npm i -D --save @hypersprite/hs-util```
+```npm i -D --save @hypersprite/hs-utils```
 
 ### Setup
 
@@ -18,7 +18,7 @@ Add a section for `hsUtils` to the package.json file that contains.
 
 `projectDirs` is an array of related project directories you want to work with.
 
-`compareTo` is a usually a main or master project directory, will use installed directory if none is defined. 
+`compareTo` is a usually a main or master project directory, will use installed directory if none is defined.
 
 These are based on the location of the package.json file.
 
