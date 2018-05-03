@@ -14,7 +14,7 @@ This should be a dev dependency
 
 ### Setup
 
-Optional setup needed for `--opt` commands.
+Optional setup needed for `--projects` commands.
 
 Add a section for `hsUtils` to the package.json file that contains.
 
@@ -54,19 +54,19 @@ The hsUtils of `this-project` package.json might look like this:
 
 Runs `npm install` on each projectDirs project
 
-`npx hs-utils  --opt install`
+`npx hs-utils  --projects install`
 
 Remove node_modules folders from each projectDirs project.
 
-`npx hs-utils --opt clean`
+`npx hs-utils --projects clean`
 
 Compares Prod and Dev dependencies based on the package.json file for each projectDir project to the compareTo project. The output will show you what is missing or different version than the `compareTo`.
 
-`npx hs-utils --opt compare`
+`npx hs-utils --projects compare`
 
 Runs npm outdated on each projectDirs project. Same as running npm outdated in the projects directory.
 
-`npx hs-utils --opt outdated`
+`npx hs-utils --projects outdated`
 
 
 Validate package.json file for basic things.

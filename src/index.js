@@ -12,7 +12,8 @@ const validator = require('validator');
 const hsUtilsDebug = debug('hsUtils');
 const rootDir = path.resolve(__dirname);
 const cwd = process.cwd();
-const runOpts = argv.opt || 'compare';
+const runProjects = argv.projects || 'compare';
+const runOpts = argv.opts || '';
 const runPackage = argv.package;
 const newName = argv.new;
 const oldName = argv.old;
@@ -326,14 +327,19 @@ switch (runPackage) {
     packageRename(oldName, newName);
     break;
   default:
-    console.log(chalk.green(`hs-util option ${runOpts}`));
-    optChoice[runOpts]([...projects()])
-      .then(
-        () => {
-          console.log('Projects script done!');
-        },
-        () => {
-          // ignore, other logging going on...
-        },
-      );
+    if (!runProjects || runProjects === true) {
+      console.log(chalk.red.bold(`hs-util projects missing argument`));
+    } else {
+      console.log(chalk.green(`hs-util projects ${runProjects}`));
+      optChoice[runProjects]([...projects()])
+        .then(
+          () => {
+            console.log('Projects script done!');
+          },
+          () => {
+            // ignore, other logging going on...
+          },
+        );
+    }
+
 }
